@@ -1,9 +1,15 @@
 :root {
     --dark-orange: #D87D4A;
     --orange:#FBAF85;
-    --grey-black:#101010;
+    --grey-black:#191919;
+    --footer-black:#101010;
     --white:#FFFFFF;
     --grey: #F1F1F1;
     --black: #000000;
+    --grey-bg:#979797;
     --light-grey: #FAFAFA;
+    --light-grey-trans: rgba(255,255,255,0.1);
+    --subtitle-grey: rgba(255,255,255,0.4);
+    --dark-grey:rgba(0,0,0,0.25);
+    --lightbox-bg:rgba(0,0,0,0.4);
 }

@@ -1,0 +1,21 @@
+.qty__container{
+    background-color: var(--grey);
+    margin-right: 1rem;
+}
+
+.qty__button{
+    color: var(--dark-grey);
+    border: none;
+    background-color: transparent;
+    padding:1rem;
+    width:12px;
+    box-sizing: content-box;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.qty__amount{
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 0 1rem;
+}

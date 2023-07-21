@@ -11,11 +11,373 @@ a {
     text-decoration: none;
 }
 
-.header{
-    /* height: 64px; */
-    background-color: var(--grey-black);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:32px 24px;
+
+
+
+
+
+.button{
+    font-family: 'Manrope', Arial, sans-serif;;
+    border: none;
+    background-color: var(--dark-orange);
+    padding:15px 30px;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    display: block;
 }
+
+.button--primary{
+    color: var(--white);
+    background-color: var(--dark-orange);
+}
+
+.button--primary:hover,
+.button--primary:focus,
+.button--primary:active
+{
+    background-color: var(--orange);
+}
+
+.button--secondary{
+    color: var(--black);
+    border: 1px solid var(--black);
+    background-color: transparent;
+}
+
+.button--secondary:hover,
+.button--secondary:focus,
+.button--secondary:active
+{
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.product__list{
+    width: 100%;
+    margin-bottom:120px;
+}
+
+.product__list--lightbox{
+    /* margin-top: 3em; */
+    width:90%;
+    margin: 0 auto;
+}
+
+.product__type{
+    display:block;
+    width: 100%;
+    margin-top: 68px;
+    height:165px;
+    background-color: var(--grey);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.product__title{
+
+    color: var(--black);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    position: relative;
+    top:88px
+}
+
+.product__link{
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 0.86rem;
+    opacity: 0.5;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    top:110px;
+    padding-right: 1.35em;
+    background: url('../assets/orange-chevron.svg');
+    background-repeat: no-repeat;
+    background-position: right 0px;
+}
+
+
+.product__type:hover > .product__link{
+    color: var(--dark-orange);
+}
+
+
+
+
+.product__image{
+    position: absolute;
+    width:150px;
+    height: auto;
+    margin-left: -75px;
+    top: -45px;
+}
+
+.promo {
+    border-radius: 8px;
+    margin-bottom:2.5em
+}
+
+.home-zx9__container{
+    text-align: center;
+    padding:6rem 2rem
+}
+
+.home-zx9__promo{
+    background: var(--dark-orange) url(../assets/home/desktop/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: top -100px center;
+    background-size: 600px;
+}
+
+.promo__title{
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-size: 2.6rem;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom:0.6em;
+}
+
+.promo__title--dark{
+    color: var(--black);
+    font-size:1.87
+}
+
+.home-zx9__speaker__image{
+    width:168px;
+    position: relative;
+    margin-bottom:3rem;
+
+}
+
+.home-zx9__description{
+    color: var(--grey);
+    line-height: 25px;
+    opacity: .75;
+    margin:0 auto;
+    margin-bottom: 24px;
+    max-width: 300px;
+    
+}
+
+.home-zx7__promo{
+    width: 100%;
+    height: 320px;
+    background:var(--white) url('../assets/home/mobile/image-speaker-zx7.jpg');
+    background-repeat: no-repeat;
+    background-position: top -30px right;
+    background-size: 100%
+
+}
+
+.home-zx7__container{
+    position: relative;
+    display: inline-block;
+    left:2em;
+    top:7em;
+    overflow-y: hidden;
+}
+
+.headphone__container{
+    display: flex;
+    flex-direction: column;
+}
+
+.headphone__promo{
+    width: 100%;
+    height: 200px;
+    background:var(--white) url('../assets/home/mobile/image-earphones-yx1.jpg');
+    background-repeat: no-repeat;
+    background-position: top -30px right;
+    background-size: 100%
+}
+
+.yx1__promo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--grey);
+    height: 200px;
+    overflow: hidden;
+}
+
+.home-yx1__container{
+    left:2em;
+    position: relative;
+}
+
+
+
+
+
+.lightbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: var(--lightbox-bg);
+}
+
+.navigation__background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: var(--lightbox-bg);
+}
+
+.lightbox--navigation{
+    position: absolute;
+    margin-top:5.9rem;
+    height: calc(100% - 5.9rem);
+}
+.lightbox__container {
+    background-color: var(--white);
+    width: 100%;
+    margin:0 auto;
+    padding-top: 1em;
+    padding-bottom:3em
+}
+
+
+@media (min-width: 600px) {
+
+
+    
+
+    .home-zx7__promo{
+        background:var(--white) url('../assets/home/tablet/image-speaker-zx7.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    .headphone__container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .headphone__promo{
+        background:var(--white) url('../assets/home/tablet/image-earphones-yx1.jpg');
+        height: 320px;
+        width:49%;
+        background-position: cover;
+        background-size: 100%
+    }
+
+    .yx1__promo{
+        width: 49%;
+        height: 320px;
+    }
+
+   
+
+}
+
+@media (min-width: 900px) {
+
+    .page__container{
+        max-width: 1200px;
+    }
+
+  
+
+    .home-zx9__container{
+        display: flex;
+        justify-content: flex-end;
+        padding: 7rem 2rem;
+    }
+    .home-zx9-promo__container{
+        width:45%;
+        text-align: left
+    }
+
+
+    .home-zx9__description {
+        text-align: left;
+        margin-left:unset;
+    }
+
+    .home-zx9__promo{
+        background-position: left -120px top -30px;
+        position: relative;
+        overflow: hidden;
+        background-size: unset;
+    }
+
+    .home-zx9__speaker__image{
+        position: absolute;
+        bottom:-20px;
+        left:182px;
+        width:320px;
+        margin-bottom: 0;
+    }
+
+   
+
+    
+
+    
+
+    .header__product__title:hover {
+        color: var(--dark-orange);
+    }
+
+    
+    
+   
+
+    .home-zx7__promo{
+        background:var(--white) url('../assets/home/desktop/image-speaker-zx7.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+   
+    .home-zx7__container{
+        position: relative;
+        display: inline-block;
+        left:5rem;
+        top:7em;
+        overflow-y: hidden;
+    }
+
+    .home-yx1__container {
+        left:5rem;
+    }
+
+    .headphone__container{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom:5rem;
+    }
+
+    .headphone__promo{
+        background:var(--white) url('../assets/home/desktop/image-earphones-yx1.jpg');
+        height: 320px;
+        width:49%;
+        background-position: cover;
+        background-size: 100%
+    }
+
+    .yx1__promo{
+        width: 49%;
+        height: 320px;
+    }
+
+
+    .navigation__background{
+        display: none;
+    }
+
+   
+}
+
+
+

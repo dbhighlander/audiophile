@@ -7,13 +7,19 @@ import './css/structure.css'
 import './css/style.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { ProductProvider } from './providers/product-provider';
+import { BasketProvider } from './providers/basket-provider';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <ProductProvider>
+      <BasketProvider>
+      <App />
+      </BasketProvider>
+    </ProductProvider>
   </React.StrictMode>
 );
 

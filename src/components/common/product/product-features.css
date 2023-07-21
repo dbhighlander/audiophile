@@ -1,0 +1,20 @@
+
+.product__card-feature-description{
+    text-align: left;
+}
+
+
+
+@media (min-width: 600px) {
+    .product__card-feature-description{
+        margin-bottom:1rem;
+        margin-left:0;
+        margin-right:0;
+    }
+    
+    .product__card-panel-info{
+        justify-content: flex-start;
+        width:100%;
+    }
+    
+}
