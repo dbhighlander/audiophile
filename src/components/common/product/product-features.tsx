@@ -1,8 +1,6 @@
-
-import { Fragment } from "react";
-
 import './product-features.css'
 import { ProductProps  } from '../../../types/PRODUCTS';
+
 const ProductFeatures = ({product}:ProductProps ) => {
 
     const featureText = product.features.split('\n').map((paragraph, index) => (

@@ -6,7 +6,7 @@
 }
 
 .product__suggestions{
-    margin: 2em 0 4em 0;
+    margin: 0 0 2em 0;
 }
 
 .product__card-image{
@@ -35,6 +35,11 @@
     margin:0 auto;
     margin-bottom: 0.9em;
     text-align: center;
+}
+
+.product__list {
+    width: 100%;
+    margin-bottom: 4rem;
 }
 
 .product__card-subtitle{

@@ -9,17 +9,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ProductProvider } from './providers/product-provider';
 import { BasketProvider } from './providers/basket-provider';
+import { LightboxProvider } from './providers/lightbox-provider';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(
   <React.StrictMode>
-    <ProductProvider>
-      <BasketProvider>
-      <App />
-      </BasketProvider>
-    </ProductProvider>
+    <LightboxProvider>
+      <ProductProvider>
+        <BasketProvider>
+        <App />
+        </BasketProvider>
+      </ProductProvider>
+    </LightboxProvider>
   </React.StrictMode>
 );
 

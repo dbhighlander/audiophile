@@ -1,5 +1,5 @@
 import React, { useContext, ReactNode, useState } from "react";
-import { BasketItem, Basket } from "../types/BASKETS";
+import { BasketItem } from "../types/BASKETS";
 const BasketContext = React.createContext<BasketContextValue | null>(null);
 
 // const productData = [
@@ -543,12 +543,17 @@ type BasketProviderProps = {
 interface BasketContextValue {
   basket: BasketItem[];
   setBasket: React.Dispatch<React.SetStateAction<BasketItem[]>>;
+  checkoutDetails:{};
+  setCheckoutDetails:Function,
+  checkoutProcess:string,
+  setCheckoutProcess:Function
 }
 
 const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
 
   const [basket, setBasket] = useState<BasketItem[]>(basketData)
-
+  const [checkoutDetails,setCheckoutDetails] = useState(false)
+  const [checkoutProcess,setCheckoutProcess] = useState('start')
 
   // Render the children within the TaskContext's provider. The value contains
   // everything that should be made available to descendants that use the
@@ -557,7 +562,11 @@ const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
     <BasketContext.Provider
       value={{
         basket,
-        setBasket
+        setBasket,
+        checkoutDetails,
+        setCheckoutDetails,
+        checkoutProcess,
+        setCheckoutProcess
       }}
     >
       {children}

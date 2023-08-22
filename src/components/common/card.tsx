@@ -25,7 +25,7 @@ const Card = ({product,index,showPurchase}:ProductProps) => {
     if(typeof showPurchase !== 'undefined' && showPurchase  ){
         inputPrompt = (
             <div className='product__card-purchase-input'>
-                <QtyInput />
+                <QtyInput is_cart={false}/>
                 <Link to={product.slug}className="button button--primary product__card-button">Add To Cart</Link>
             </div>
         )

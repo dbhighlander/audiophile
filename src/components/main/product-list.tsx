@@ -1,26 +1,21 @@
 import headphones from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
 import speakers from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
 import earphones from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
+import ProductType from './product-type';
 
 const ProductList = () => {
 
+    const productTypes = [
+        'headphones',
+        'speakers',
+        'earphones'
+    ];
+
     return (
         <div className="product__list ">
-            <div className='product__type'>
-                <img className='product__image' src={headphones} />
-                <p className='product__title'>headphones</p>
-                <a className='product__link' href='#'>Shop</a>
-            </div>
-            <div className='product__type'>
-                <img className='product__image' src={speakers}  />
-                <p className='product__title'>speakers</p>
-                <a className='product__link' href='#'>Shop</a>
-            </div>
-            <div className='product__type'>
-                <img className='product__image' src={earphones} />
-                <p className='product__title'>earphones</p>
-                <a className='product__link' href='#'>Shop</a>
-            </div>
+            {productTypes.map((productType,i) => (
+                <ProductType productType={productType} key={'product_type_'+i} />
+            ))}
         </div>
     )
 }

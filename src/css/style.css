@@ -11,11 +11,6 @@ a {
     text-decoration: none;
 }
 
-
-
-
-
-
 .button{
     font-family: 'Manrope', Arial, sans-serif;;
     border: none;
@@ -25,7 +20,7 @@ a {
     color: var(--white);
     font-weight: 700;
     cursor: pointer;
-    display: block;
+    display: inline-block;
 }
 
 .button--primary{
@@ -52,6 +47,10 @@ a {
 {
     color: var(--white);
     background-color: var(--black);
+}
+
+.button--promo{
+    margin: 0 auto;
 }
 
 .product__list{
@@ -84,7 +83,7 @@ a {
     font-weight: 700;
     letter-spacing: 1.1px;
     position: relative;
-    top:88px
+    top:90px
 }
 
 .product__link{
@@ -121,6 +120,10 @@ a {
 .promo {
     border-radius: 8px;
     margin-bottom:2.5em
+}
+
+.home__display{
+    margin-top:4rem;
 }
 
 .home-zx9__container{
@@ -214,7 +217,7 @@ a {
 }
 
 
-
+/* 
 
 
 .lightbox {
@@ -244,12 +247,18 @@ a {
     margin:0 auto;
     padding-top: 1em;
     padding-bottom:3em
-}
+} */
 
 
 @media (min-width: 600px) {
 
+    .product__title{
+        top:108px
+    }
 
+    .product__link{
+        top:125px;
+    }
     
 
     .home-zx7__promo{
@@ -276,17 +285,15 @@ a {
         height: 320px;
     }
 
-   
-
+    
 }
 
 @media (min-width: 900px) {
 
-    .page__container{
-        max-width: 1200px;
+    .button--promo{
+        margin: unset;
     }
 
-  
 
     .home-zx9__container{
         display: flex;
@@ -355,7 +362,7 @@ a {
     .headphone__container{
         flex-direction: row;
         justify-content: space-between;
-        padding-bottom:5rem;
+        padding-bottom:4rem;
     }
 
     .headphone__promo{
@@ -363,12 +370,14 @@ a {
         height: 320px;
         width:49%;
         background-position: cover;
-        background-size: 100%
+        background-size: 100%;
+        margin-bottom: 0;;
     }
 
     .yx1__promo{
         width: 49%;
         height: 320px;
+        margin-bottom: 0;
     }
 
 

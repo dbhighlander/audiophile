@@ -15,22 +15,18 @@ import {
 
 import ScrollToTop from './utilities/scroll-to-top';
 import SubHeaderContainer from './containers/header/sub-header-container';
+import ShopContainer from './containers/main/shop-container';
+import CheckoutContainer from './containers/main/checkout-container';
 
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop />
-      <div className="container">
-        <HeaderContainer />
-        <SubHeaderContainer />
+      <ScrollToTop />
           <Routes>
-            <Route path='/' element={<HomeContainer />} />
-            <Route path='products/:category' element={<ProductsContainer />} />
-            <Route path='products/:category/:slug' element={<ProductContainer />} />
+            <Route path='/' element={<ShopContainer />} />
+            <Route path='products/*' element={<ShopContainer />} />           
+            <Route path='checkout' element={<CheckoutContainer />} />
           </Routes>
-          <SubFooterContainer />
-        <FooterContainer />
-        </div>
       </BrowserRouter>
     
   );

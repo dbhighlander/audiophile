@@ -1,16 +1,34 @@
-
-import { Fragment } from "react";
-// import { ProductProps } from "../../types/PRODUCTS"
-// import { productImages } from "../../utilities/images";
-// import useWindowDimensions from "../../utilities/useWindowDimensions";
 import './qty.css'
-import { Link } from "react-router-dom";
-const QtyInput = () => {
+import { QtyProps } from "../../../../types/BASKETS";
+import { useState } from 'react';
+
+const QtyInput = ({is_cart}:QtyProps) => {
+    
+    const [amount,setAmount] = useState(0);
+
+    const handleInputChange = (amount:number) => {
+        if(is_cart){
+            if(amount > 0){
+                setAmount(amount)
+            }
+        } else {
+            if(amount >= 0){
+                setAmount(amount)
+            }
+        }
+        
+    }
+
+    let containerClass = 'qty__container'
+    if(is_cart){
+        containerClass += ' qty__container--checkout'
+    }
+    
     return (
-        <div className='qty__container'>
-            <button className='qty__button'>-</button>
-            <span className='qty__amount'>0</span>
-            <button className='qty__button'>+</button>
+        <div className={containerClass}>
+            <button className='qty__button' onClick={() => handleInputChange(amount - 1)}>-</button>
+            <span className='qty__amount'>{amount}</span>
+            <button className='qty__button' onClick={() => handleInputChange(amount + 1)}>+</button>
         </div>
     )
 }

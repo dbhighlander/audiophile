@@ -1,0 +1,22 @@
+.basket-checkout{
+    position: relative;
+    margin:0;
+    width: 100%;
+    top:0;
+}
+
+.basket__summary__amount{
+    flex-direction: column;
+}
+
+.basket__summary__row{
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total__amount-bold{
+    color:var(--dark-orange)
+}
+

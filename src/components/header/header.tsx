@@ -3,15 +3,12 @@ import hamburgerLogo from '../../assets/shared/tablet/icon-hamburger.svg';
 import headerLogo from '../../assets/shared/desktop/logo.svg';
 import headerCartLogo from '../../assets/shared/desktop/icon-cart.svg';
 import { HeaderProps } from "../../containers/header/header-container";
-import headphones from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
-import speakers from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
-import earphones from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
-import SubHeaderContainer from "../../containers/header/sub-header-container";
 import { Link } from "react-router-dom";
 import  './header.css'
 import BasketContainer from "../../containers/header/basket-container";
+import HeaderCategoryType from "./header-category-type";
 
-const Header = ({isNavigationVisible,toggleNavigationVisible,isBasketVisible,toggleBasketVisible,wrapperRef}:HeaderProps) => {
+const Header = ({isNavigationVisible,toggleNavigationVisible,isBasketVisible,toggleBasketVisible,wrapperRef,basketWrapperRef}:HeaderProps) => {
 
     let navigationClass= 'header__navigation__container';
     let navigationBg = null;
@@ -26,37 +23,37 @@ const Header = ({isNavigationVisible,toggleNavigationVisible,isBasketVisible,tog
         basketBg = <div className='basket__background'></div>
     }
 
+    const headerCategories = [
+        'headphones',
+        'speakers',
+        'earphones'
+    ];
+
     return (
         <Fragment>
             {basketBg }
             { navigationBg}
-            <header className="header">
+            <header className="header" ref={wrapperRef}>
                 
                 <div className="header__top ">
-                    <a className="header__link hamburger__link" onClick={(e) => toggleNavigationVisible(!isNavigationVisible)}><img className="hamburger__logo" alt="header__hamburger" src={hamburgerLogo}/></a>
-                    <a className="header__link home__link"><img className="site__logo" alt="header__logo" src={headerLogo}/></a>
+                    <button className="header__link hamburger__link" onClick={(e) => toggleNavigationVisible(!isNavigationVisible)}>
+                        <img className="hamburger__logo" alt="header__hamburger" src={hamburgerLogo}/>
+                    </button>
+                    <Link  className="header__link home__link" to='/'>
+                        <img className="site__logo" alt="header__logo" src={headerLogo}/>
+                    </Link>
                     <nav className={navigationClass}>
                         <Link to='/' className='header__navigation__link home__navigation__link' >
                             <p className='header__product__title'>Home</p>
                         </Link>
-                        <Link to='/products/headphones' className='header__navigation__link header__product__type' >
-                            <img className='header__product__image' src={headphones} />
-                            <p className='header__product__title'>headphones</p>
-                            <p className='header__product__link' >Shop</p>
-                        </Link>
-                        <Link to='/products/speakers' className='header__navigation__link header__product__type' >
-                            <img className='header__product__image' src={speakers}  />
-                            <p className='header__product__title'>speakers</p>
-                            <p className='header__product__link'>Shop</p>
-                        </Link>
-                        <Link to='/products/earphones' className='header__navigation__link header__product__type' >
-                            <img className='header__product__image' src={earphones} />
-                            <p className='header__product__title'>earphones</p>
-                            <p className='header__product__link'>Shop</p>
-                        </Link>
+                        {headerCategories.map((category,i) => (
+                            <HeaderCategoryType productType={category} key={'product-header_category_'+i} />
+                        ))}
                     </nav>
                     
-                    <a className="header__link" onClick={(e) => toggleBasketVisible(!isBasketVisible)}><img className="cart__logo"/><img alt="cart__icon" className="header__logo" src={headerCartLogo}/></a>
+                    <button ref={basketWrapperRef} className="header__link home__checkout__link" onClick={(e) => toggleBasketVisible(!isBasketVisible)}>
+                        <img alt="cart__icon" className="header__logo" src={headerCartLogo}/>
+                    </button>
                     {isBasketVisible && <BasketContainer/>}
                 </div>
                    

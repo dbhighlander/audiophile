@@ -1,0 +1,9 @@
+.link__back{
+    color:var(--grey-bg);
+    font-weight: 700;
+    display: inline-block;
+    align-self: flex-start;
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+}

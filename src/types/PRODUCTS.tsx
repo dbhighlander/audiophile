@@ -20,6 +20,7 @@ export type Gallery = {
 export type OtherProducts = {
     slug:string,
     name:string,
+    category:string,
     image: Image
 }
 
@@ -42,7 +43,8 @@ export type Product = {
 export type OtherProduct = {
     slug: string,
     name: string,
-    image: Image
+    image: Image,
+    category:string,
 }
 
 export type ProductsProps = {
@@ -62,4 +64,8 @@ export type ProductPageProps = {
 
 export type OtherProductProps = {
     otherProduct:OtherProduct,
+}
+
+export type ProductTypeProps = {
+    productType:string
 }

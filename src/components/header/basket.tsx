@@ -1,7 +1,8 @@
-import React, { Fragment, useEffect, useRef, useState } from "react";
-import Header from "./header";
+import  { Fragment } from "react";
 import './basket.css'
-const Basket = () => {
+import BasketItem from "./basket-item";
+import { BasketProps } from "../../types/BASKETS";
+const Basket = ({processCheckout}:BasketProps) => {
     
     return (
         <Fragment>
@@ -13,14 +14,16 @@ const Basket = () => {
                     <button className="basket__cart-remove-all">Remove All</button>
                 </div>
                 <div className="basket__contents">
-                    
+                    <BasketItem is_summary={false}/>
+                    <BasketItem is_summary={false}/>
+                    <BasketItem is_summary={false}/>
                 </div>
                 <div className="basket__footer">
                     <div className="basket__summary">
-                        <span className="total-text">Total</span>
-                        <span className="total-amount">$1012</span>
+                        <span className="total__text">Total</span>
+                        <span className="total__amount">$1012</span>
                     </div>
-                    <button className='btn'></button>
+                    <button onClick={()=> processCheckout()} className='button button--primary button--checkout'>Checkout</button>
                 </div>
             </div>
 

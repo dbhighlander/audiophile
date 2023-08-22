@@ -1,0 +1,38 @@
+.text__input__wrapper{
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+
+
+.text__input{
+    width: 100%;
+    padding:0.7rem 0.5rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    border: 1px solid var(--grey);
+}
+
+.text__input--error{
+    border: 1px solid var(--red);
+}
+
+.text__input__label{
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.text__input__label--error{
+    color:var(--red);
+}
+
+.text__input__error-msg{
+    float:right;
+    color:var(--red);
+    font-weight: 800;
+    font-size: 12px;
+
+}
