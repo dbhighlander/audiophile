@@ -20,7 +20,7 @@ import CheckoutContainer from './containers/main/checkout-container';
 
 function App() {
   return (
-    <BrowserRouter basename ="/audiophile">
+    <BrowserRouter basename={window.location.pathname || ''}>
       <ScrollToTop />
           <Routes>
             <Route path='/' element={<ShopContainer />} />
