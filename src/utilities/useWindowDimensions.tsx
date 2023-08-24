@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-const MOBILE_WIDTH = 0;
 const TABLET_WIDTH= 600;
 const DESKTOP_WIDTH = 900;
 

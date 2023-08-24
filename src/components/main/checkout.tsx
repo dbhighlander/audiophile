@@ -28,7 +28,10 @@ const Checkout = (
         setCity,
         setPostCode,
         setCountry,
-        setPaymentMethod
+        setPaymentMethod,
+        handleCheckout,
+
+        errors
     }:CheckoutProps) => {
 
     let lightbox = null
@@ -53,15 +56,15 @@ const Checkout = (
                         <h3 className='checkout__section__title'>Billing Details</h3>
                         <div className='checkout__form__row'>
                             <div className='checkout__form__item'>
-                                <TextInput label='Name' placeholder='Joe Bloggs' value={name} onTextChange={(e) => setName(e.target.value)} errors ={{}}/>
+                                <TextInput label='Name' id='ap_checkout_name' placeholder='Joe Bloggs' value={name} onTextChange={(e) => setName(e.target.value)} errors ={errors}/>
                             </div>
                             <div className='checkout__form__item'>
-                                <TextInput label='Email' placeholder='test@audiophile.com' value={email} onTextChange={(e) => setEmail(e.target.value)} errors ={{title:'Wrong Format'}}/>
+                                <TextInput label='Email' id='ap_checkout_email'  placeholder='test@audiophile.com' value={email} onTextChange={(e) => setEmail(e.target.value)} errors ={errors}/>
                             </div>
                         </div>
                         <div className='checkout__form__row'>
                             <div className='checkout__form__item'>
-                                <TextInput label='Phone number' placeholder='+44 94949 049490' value={phoneNumber} onTextChange={(e) => setPhoneNumber(e.target.value)} errors ={{}}/>
+                                <TextInput label='Phone number' id='ap_checkout_phoneNumber' placeholder='+44 94949 049490' value={phoneNumber} onTextChange={(e) => setPhoneNumber(e.target.value)} errors ={errors}/>
                             </div>
                         </div>
                     </div>
@@ -69,20 +72,20 @@ const Checkout = (
                         <h3 className='checkout__section__title'>Shipping Info</h3>
                         <div className='checkout__form__row '>
                             <div className='checkout__form__item checkout__form__item--full'>
-                                <TextInput label='Address' placeholder='11 Williams Drive' value={address} onTextChange={(e) => setAddress(e.target.value)} errors ={{}}/>
+                                <TextInput label='Address' id='ap_checkout_address' placeholder='11 Williams Drive' value={address} onTextChange={(e) => setAddress(e.target.value)} errors ={errors}/>
                             </div>
                         </div>
                         <div className='checkout__form__row'>
                             <div className='checkout__form__item'>
-                                <TextInput label='City' placeholder='Glasgow' value={city} onTextChange={(e) => setCity(e.target.value)} errors ={{}}/>
+                                <TextInput label='City' id='ap_checkout_city' placeholder='Glasgow' value={city} onTextChange={(e) => setCity(e.target.value)} errors ={errors}/>
                             </div>
                             <div className='checkout__form__item'>
-                                <TextInput label='Post Code' placeholder='PA4 0LA' value={postCode} onTextChange={(e) => setPostCode(e.target.value)} errors ={{}}/>
+                                <TextInput label='Post Code' id='ap_checkout_postcode' placeholder='PA4 0LA' value={postCode} onTextChange={(e) => setPostCode(e.target.value)} errors ={errors}/>
                             </div>
                         </div>
                         <div className='checkout__form__row'>
                             <div className='checkout__form__item'>
-                                <TextInput label='Country' placeholder='UK' value={country} onTextChange={(e) => setCountry(e.target.value)} errors ={{}}/>
+                                <TextInput label='Country' id='ap_checkout_country' placeholder='UK' value={country} onTextChange={(e) => setCountry(e.target.value)} errors ={errors}/>
                             </div>
                         </div>
                     </div>
@@ -105,7 +108,7 @@ const Checkout = (
                     </div>
                 </div>
                 <div className='checkout__summary'>
-                    <BasketCheckoutContainer />
+                    <BasketCheckoutContainer handleCheckout={handleCheckout}/>
                 </div>
             </div>
         </main>

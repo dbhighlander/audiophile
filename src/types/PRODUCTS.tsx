@@ -58,8 +58,26 @@ export type ProductProps = {
     showPurchase?:Boolean
 }
 
+export type CardPurchaseProps = {
+    product:Product,
+    index?:number,
+    addToCart:Function,
+    qty:number,
+    setQty:Function
+}
+
+export type CardProps = {
+    product:Product,
+    index?:number,
+
+
+}
+
 export type ProductPageProps = {
     product:Product,
+    addToCart:Function
+    qty:number,
+    setQty:Function
 }
 
 export type OtherProductProps = {

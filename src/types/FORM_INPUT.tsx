@@ -5,12 +5,11 @@ export type TextInputProps = {
     placeholder: string,
     value: string,
     onTextChange:ChangeEventHandler<HTMLInputElement>,
-    errors:Errors
+    errors:Record<string, string>,
+    id:string,
 }
 
-export type Errors = {
-    title?:string
-}
+
 
 export type RadioInputProps = {
     label: string,

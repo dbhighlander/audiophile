@@ -1,29 +1,27 @@
 import  { Fragment } from "react";
 import './basket.css'
-import BasketItem from "./basket-item";
 import { BasketProps } from "../../types/BASKETS";
-const Basket = ({processCheckout}:BasketProps) => {
+import BasketItemContainer from "../../containers/header/basket-item-container";
+const Basket = ({processCheckout,basket,total,handleRemoveAllFromCart}:BasketProps) => {
     
     return (
         <Fragment>
-            
-
             <div className="basket">
                 <div className="basket__header">
-                    <span className="basket__cart-count">Cart(3)</span>
-                    <button className="basket__cart-remove-all">Remove All</button>
+                    <span className="basket__cart-count">Cart({basket.length})</span>
+                    {basket.length > 0 && <button className="basket__cart-remove-all" onClick={handleRemoveAllFromCart}>Remove All</button>}
                 </div>
                 <div className="basket__contents">
-                    <BasketItem is_summary={false}/>
-                    <BasketItem is_summary={false}/>
-                    <BasketItem is_summary={false}/>
+                    {basket.map((basketItem,i) => (
+                        <BasketItemContainer is_summary={false} basketItem={basketItem} key={'basket-item-'+i}/>
+                    ))}
                 </div>
                 <div className="basket__footer">
                     <div className="basket__summary">
                         <span className="total__text">Total</span>
-                        <span className="total__amount">$1012</span>
+                        <span className="total__amount">${total}</span>
                     </div>
-                    <button onClick={()=> processCheckout()} className='button button--primary button--checkout'>Checkout</button>
+                    {basket.length > 0 && <button onClick={()=> processCheckout()} className='button button--primary button--checkout'>Checkout</button>}
                 </div>
             </div>
 

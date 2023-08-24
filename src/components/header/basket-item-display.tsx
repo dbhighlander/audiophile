@@ -1,14 +1,11 @@
 
-import QtyInput from "../common/elements/qty";
-import { BasketItemProps } from "../../types/BASKETS";
+import { BasketItemDisplayProps } from "../../types/BASKETS";
 
 
-const BasketItem = ({basketItem,qtyChangeHandler}:BasketItemProps) => {
-    
+const BasketItemDisplay = ({basketItem}:BasketItemDisplayProps) => {
 
     return (
         <div className="basket__item">
-            
             <div className="basket__item--desc">
                 <img src={'/assets/cart/image-'+basketItem.product.slug+'.jpg'} alt={basketItem.product.name} className="basket__item__image" />
                 <div className="basket__item--info">
@@ -16,13 +13,12 @@ const BasketItem = ({basketItem,qtyChangeHandler}:BasketItemProps) => {
                     <div className="basket__item--price">${basketItem.product.price}</div>
                 </div>
             </div>
-            
             <div className="basket__item__qty">
-                <QtyInput is_cart={true} qty={basketItem.qty} qtyChangeHandler={ qtyChangeHandler}/>               
+                <span className="qty__summary">x{basketItem.qty}</span>             
             </div>
         </div>
     )
 
 }
 
-export default BasketItem
+export default BasketItemDisplay

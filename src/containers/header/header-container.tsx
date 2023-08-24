@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../../components/header/header";
+import { useBasket } from "../../providers/basket-provider";
+import { useLocation, useParams } from "react-router-dom";
 
 export type HeaderProps = {
     isNavigationVisible: boolean,
@@ -8,15 +10,24 @@ export type HeaderProps = {
     toggleBasketVisible:Function,
     wrapperRef: React.RefObject<HTMLInputElement>
     basketWrapperRef: React.RefObject<HTMLButtonElement>
+    showLinks:boolean
 }
 
 
 const HeaderContainer = () => {
     const [isNavigationVisible,toggleNavigationVisible] = useState(false)
-    const [isBasketVisible,toggleBasketVisible] = useState(false)
+    const {isBasketVisible,toggleBasketVisible} = useBasket();
     const wrapperRef = useRef(null);
     const basketWrapperRef = useRef(null);
-    
+
+    const {pathname} = useLocation();
+
+    let showLinks = true;
+
+    if(pathname == '/checkout'){
+      showLinks = false;
+    }
+
     useOutsideAlerter(wrapperRef);
     useOutsideBasketAlerter(basketWrapperRef)
     
@@ -74,6 +85,7 @@ const HeaderContainer = () => {
             toggleBasketVisible={toggleBasketVisible}
             wrapperRef={wrapperRef}
             basketWrapperRef={basketWrapperRef}
+            showLinks={showLinks}
         />
     )
 }

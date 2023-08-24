@@ -1,5 +1,4 @@
 
-import Card from "../common/card";
 import ProductList from './product-list';
 import { ProductPageProps } from '../../types/PRODUCTS';
 import ProductFeatures from '../common/product/product-features';
@@ -8,10 +7,17 @@ import ProductImages from '../common/product/product-images';
 import ProductSuggestions from '../common/product/product-suggestions';
 import  './product.css'
 import BackBtn from "../common/elements/back-btn";
+import CardPurchase from "../common/card-purchase";
 
-const ProductItem = ({product}:ProductPageProps) => {
+const ProductItem = ({product,addToCart,qty,setQty}:ProductPageProps) => {
 
-    const card = <Card product={product} showPurchase={true} key={'product-'+product.slug} />    
+    const card = <CardPurchase
+                    product={product} 
+                    addToCart={addToCart} 
+                    key={'product-'+product.slug} 
+                    qty={qty}
+                    setQty={setQty}
+                    />    
     
     return (
         <main className='page__container'>

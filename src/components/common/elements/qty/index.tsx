@@ -2,18 +2,18 @@ import './qty.css'
 import { QtyProps } from "../../../../types/BASKETS";
 import { useState } from 'react';
 
-const QtyInput = ({is_cart}:QtyProps) => {
+const QtyInput = ({is_cart,qty,qtyChangeHandler}:QtyProps) => {
     
-    const [amount,setAmount] = useState(0);
+    
 
     const handleInputChange = (amount:number) => {
         if(is_cart){
-            if(amount > 0){
-                setAmount(amount)
+            if(amount >= 0){
+                qtyChangeHandler(amount)
             }
         } else {
             if(amount >= 0){
-                setAmount(amount)
+                qtyChangeHandler(amount)
             }
         }
         
@@ -26,9 +26,9 @@ const QtyInput = ({is_cart}:QtyProps) => {
     
     return (
         <div className={containerClass}>
-            <button className='qty__button' onClick={() => handleInputChange(amount - 1)}>-</button>
-            <span className='qty__amount'>{amount}</span>
-            <button className='qty__button' onClick={() => handleInputChange(amount + 1)}>+</button>
+            <button className='qty__button' onClick={() => handleInputChange(qty - 1)}>-</button>
+            <span className='qty__amount'>{qty}</span>
+            <button className='qty__button' onClick={() => handleInputChange(qty + 1)}>+</button>
         </div>
     )
 }

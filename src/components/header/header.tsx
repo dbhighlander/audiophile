@@ -8,7 +8,15 @@ import  './header.css'
 import BasketContainer from "../../containers/header/basket-container";
 import HeaderCategoryType from "./header-category-type";
 
-const Header = ({isNavigationVisible,toggleNavigationVisible,isBasketVisible,toggleBasketVisible,wrapperRef,basketWrapperRef}:HeaderProps) => {
+const Header = ({
+    isNavigationVisible,
+    toggleNavigationVisible,
+    isBasketVisible,
+    toggleBasketVisible,
+    wrapperRef,
+    basketWrapperRef
+    ,showLinks
+    }:HeaderProps) => {
 
     let navigationClass= 'header__navigation__container';
     let navigationBg = null;
@@ -43,17 +51,23 @@ const Header = ({isNavigationVisible,toggleNavigationVisible,isBasketVisible,tog
                         <img className="site__logo" alt="header__logo" src={headerLogo}/>
                     </Link>
                     <nav className={navigationClass}>
-                        <Link to='/' className='header__navigation__link home__navigation__link' >
-                            <p className='header__product__title'>Home</p>
-                        </Link>
-                        {headerCategories.map((category,i) => (
-                            <HeaderCategoryType productType={category} key={'product-header_category_'+i} />
-                        ))}
+                        {showLinks &&
+                        <Fragment>
+                            <Link to='/' className='header__navigation__link home__navigation__link' >
+                                <p className='header__product__title'>Home</p>
+                            </Link>
+                            {showLinks && headerCategories.map((category,i) => (
+                                <HeaderCategoryType productType={category} key={'product-header_category_'+i} />
+                            ))}
+                        </Fragment>
+                        }
                     </nav>
                     
-                    <button ref={basketWrapperRef} className="header__link home__checkout__link" onClick={(e) => toggleBasketVisible(!isBasketVisible)}>
-                        <img alt="cart__icon" className="header__logo" src={headerCartLogo}/>
-                    </button>
+                    {showLinks &&
+                        <button ref={basketWrapperRef} className="header__link home__checkout__link" onClick={(e) => toggleBasketVisible(!isBasketVisible)}>
+                            <img alt="cart__icon" className="header__logo" src={headerCartLogo}/>
+                        </button>
+                    }
                     {isBasketVisible && <BasketContainer/>}
                 </div>
                    

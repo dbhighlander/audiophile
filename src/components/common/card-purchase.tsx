@@ -1,12 +1,11 @@
 
 import { Fragment } from "react";
-import { CardProps, ProductProps } from "../../types/PRODUCTS"
+import { CardPurchaseProps } from "../../types/PRODUCTS"
 import { productImages } from "../../utilities/images";
 import useWindowDimensions from "../../utilities/useWindowDimensions";
 import './card.css'
-import { Link } from "react-router-dom";
 import QtyInput from "./elements/qty";
-const Card = ({product,index/*,showPurchase,addToCart,qty,setQty*/}:CardProps) => {
+const CardPurchase = ({product,index,addToCart,qty,setQty}:CardPurchaseProps) => {
 
     const {view } = useWindowDimensions();
     const imageFilePath = product.image[view];
@@ -20,7 +19,8 @@ const Card = ({product,index/*,showPurchase,addToCart,qty,setQty*/}:CardProps) =
         </Fragment>
     )
     
-    
+    // let inputPrompt = 
+
 
     const descriptionPanel = (
         <Fragment>
@@ -29,7 +29,13 @@ const Card = ({product,index/*,showPurchase,addToCart,qty,setQty*/}:CardProps) =
                     {product.new ? <p className='product__promo'>New Product</p> : null }
                     <h2 className='product__card-title'>{product.name}</h2>
                     <p className='product__card-description'>{product.description}</p>
-                    <Link to={product.slug}className="button button--primary product__card-button">See Product</Link>
+
+                        <p className="product__card-price">${product.price}</p>
+
+                    <div className='product__card-purchase-input'>
+                        <QtyInput is_cart={false} qty={qty} qtyChangeHandler={setQty} />
+                        <button onClick={() => addToCart(product.slug)}  className="button button--primary product__card-button">Add To Cart</button>
+                    </div>
                 </div>
             </div>
         </Fragment>
@@ -42,7 +48,7 @@ const Card = ({product,index/*,showPurchase,addToCart,qty,setQty*/}:CardProps) =
         </Fragment>
         )
 
-    if(view == 'desktop' && index !== undefined && index % 2 == 1){
+    if(view === 'desktop' && index !== undefined && index % 2 === 1){
         cardPanels = (
             <Fragment>
                 {descriptionPanel}
@@ -51,16 +57,11 @@ const Card = ({product,index/*,showPurchase,addToCart,qty,setQty*/}:CardProps) =
         )
     }
 
-    // let productCardClass = "product__card"
-    // if(typeof showPurchase !== 'undefined' && showPurchase  ){
-    //     productCardClass += " product__item__card"
-    // }
-
     return (
-        <div className="product__card">
+        <div className= "product__card product__item__card" >
             {cardPanels}
         </div>
     )
 }
 
-export default Card
+export default CardPurchase

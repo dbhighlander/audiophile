@@ -1,15 +1,17 @@
-import React, { useEffect, useRef } from "react";
-
-// import { useBoards } from "../../app/providers/board-provider";
-// import { useLightbox } from "../../app/providers/lightbox-provider";
+import  { useEffect, useRef } from "react";
 import Lightbox from '../../components/lightbox/lightbox.js'
 import { useLightbox } from "../../providers/lightbox-provider.tsx";
+import { useNavigate } from "react-router-dom";
+import { removeCookie } from "../../utilities/cookieService.js";
+import { useBasket } from "../../providers/basket-provider.tsx";
 
-const LightboxContainer = (props) => {
+const LightboxContainer = () => {
 
   const {toggleLightboxVisible} = useLightbox();
 
   const content = '';
+  const navigate = useNavigate()
+  const {setBasket} =useBasket()
 
     function useOutsideAlerter(ref) {
         useEffect(() => {
@@ -18,7 +20,10 @@ const LightboxContainer = (props) => {
            */
           function handleClickOutside(event) {
             if (ref.current && !ref.current.contains(event.target)) {
+              removeCookie('a-bsk')
+              setBasket([])
               toggleLightboxVisible(false)
+              navigate('/')
             }
           }
           // Bind the event listener

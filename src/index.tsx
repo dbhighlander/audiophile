@@ -16,13 +16,15 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <LightboxProvider>
+    
       <ProductProvider>
         <BasketProvider>
-        <App />
+          <LightboxProvider>
+          <App />
+          </LightboxProvider>
         </BasketProvider>
       </ProductProvider>
-    </LightboxProvider>
+    
   </React.StrictMode>
 );
 
