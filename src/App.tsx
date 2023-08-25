@@ -8,7 +8,7 @@ import ProductsContainer from './containers/main/products-container';
 import ProductContainer from './containers/main/product-container';
 
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route
 } from "react-router-dom";
@@ -20,14 +20,14 @@ import CheckoutContainer from './containers/main/checkout-container';
 
 function App() {
   return (
-    <BrowserRouter basename ="/audiophile">
+    <HashRouter>
       <ScrollToTop />
           <Routes>
             <Route path='/' element={<ShopContainer />} />
             <Route path='products/*' element={<ShopContainer />} />           
             <Route path='checkout' element={<CheckoutContainer />} />
           </Routes>
-      </BrowserRouter>
+      </HashRouter>
     
   );
 }
