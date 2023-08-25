@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Products from "../../components/main/products";
+import  { useState } from "react";
 import {useParams } from "react-router-dom";
 import Product from "../../components/main/product";
 import { useProduct } from "../../providers/product-provider";
@@ -35,8 +34,9 @@ const ProductContainer = () => {
             })
         }
 
-        setBasket(newBasket)
         setCookie('a-bsk',JSON.stringify(newBasket))
+        setBasket(newBasket)
+        
         toggleBasketVisible(true);
 
         setTimeout(() => {

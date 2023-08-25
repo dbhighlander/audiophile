@@ -58,9 +58,9 @@ const CheckoutContainer = () => {
     const [paymentMethod, setPaymentMethod] = useState('paypal');
     const [errors,setError] = useState({})
 
-    const {basket} = useBasket() 
+    const {basket,hasBasketLoaded} = useBasket() 
     const navigate = useNavigate()
-    
+
     const handleCheckout = () => {
 
         const inputsToCheck = ['name', 'email', 'phoneNumber', 'address', 'city', 'postcode', 'country'];
@@ -148,10 +148,10 @@ const CheckoutContainer = () => {
     }
 
     useEffect(() => {
-        if(basket.length == 0){
+        if(hasBasketLoaded && basket.length === 0){
             navigate('/')
         }
-    },[basket])
+    },[basket,hasBasketLoaded,navigate])
 
     return (
         <Checkout 

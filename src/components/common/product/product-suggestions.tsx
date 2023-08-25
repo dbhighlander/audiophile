@@ -10,7 +10,7 @@ const ProductSuggestions = ({product}:ProductProps ) => {
             <h3 className='product__card-subtitle product__suggestion-subtitle'>You might also like</h3>
             <div className='product__suggestion--container'>
                 {product.others.map((product,i) => {
-                    return <ProductSuggestionCard otherProduct={product}/>
+                    return <ProductSuggestionCard otherProduct={product} key={'product-suggestions-'+i}/>
                 })}
             </div>
         </Fragment>

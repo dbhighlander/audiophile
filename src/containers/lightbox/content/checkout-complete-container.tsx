@@ -4,11 +4,13 @@ import CheckoutComplete from "../../../components/lightbox/content/checkout-comp
 import { useBasket } from "../../../providers/basket-provider";
 import { useProduct } from "../../../providers/product-provider";
 import { removeCookie } from "../../../utilities/cookieService";
+import { useLightbox } from "../../../providers/lightbox-provider";
 
 const CheckoutCompleteContainer = () => {
     
     const{products} = useProduct()
     const {basket,setBasket} = useBasket()
+    const {toggleLightboxVisible} = useLightbox()
     const navigate = useNavigate()
 
     const basketWithProducts = basket.map((basketItem) => {
@@ -32,6 +34,7 @@ const CheckoutCompleteContainer = () => {
 
      const handleCheckoutComplete = () => {
         removeCookie('a-bsk')
+        toggleLightboxVisible(false)
         setBasket([])
         navigate('/')
      }

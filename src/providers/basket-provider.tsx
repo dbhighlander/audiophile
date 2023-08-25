@@ -17,7 +17,8 @@ interface BasketContextValue {
   checkoutProcess:string,
   setCheckoutProcess:Function,
   isBasketVisible:boolean,
-  toggleBasketVisible:Function
+  toggleBasketVisible:Function,
+  hasBasketLoaded:boolean
 }
 
 
@@ -27,13 +28,15 @@ const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
   const [checkoutDetails,setCheckoutDetails] = useState(false)
   const [checkoutProcess,setCheckoutProcess] = useState('start')
   const [isBasketVisible,toggleBasketVisible] = useState(false)
-
+  const [hasBasketLoaded,setBasketLoaded] = useState(false);
+  
   useEffect(() => {
     let basket = getCookie('a-bsk');
 
     if(typeof basket !== 'undefined'){
       basket = JSON.parse(basket);
       setBasket(basket)
+      setBasketLoaded(true)
     }
     
   },[])
@@ -51,7 +54,8 @@ const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
         checkoutProcess,
         setCheckoutProcess,
         isBasketVisible,
-        toggleBasketVisible
+        toggleBasketVisible,
+        hasBasketLoaded
       }}
     >
       {children}
