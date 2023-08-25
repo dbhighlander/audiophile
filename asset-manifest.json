@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.073776f2.css",
-    "main.js": "./static/js/main.b52bb564.js",
+    "main.css": "./static/css/main.1461edf9.css",
+    "main.js": "./static/js/main.0d47bc27.js",
     "static/js/787.8093f5c1.chunk.js": "./static/js/787.8093f5c1.chunk.js",
     "static/media/image-speaker-zx9.png": "./static/media/image-speaker-zx9.97769f2fb291eaed1868.png",
     "static/media/image-product.jpg": "./static/media/image-product.4dc7e99c2ff099acdcef.jpg",
@@ -22,12 +22,12 @@
     "static/media/pattern-circles.svg": "./static/media/pattern-circles.f4df3610b83b818abbbe.svg",
     "static/media/orange-chevron.svg": "./static/media/orange-chevron.aefddf297740fe9b50fc.svg",
     "static/media/icon-hamburger.svg": "./static/media/icon-hamburger.f8a9f0cf12d419a7d18556f98d81a47e.svg",
-    "main.073776f2.css.map": "./static/css/main.073776f2.css.map",
-    "main.b52bb564.js.map": "./static/js/main.b52bb564.js.map",
+    "main.1461edf9.css.map": "./static/css/main.1461edf9.css.map",
+    "main.0d47bc27.js.map": "./static/js/main.0d47bc27.js.map",
     "787.8093f5c1.chunk.js.map": "./static/js/787.8093f5c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073776f2.css",
-    "static/js/main.b52bb564.js"
+    "static/css/main.1461edf9.css",
+    "static/js/main.0d47bc27.js"
   ]
 }
