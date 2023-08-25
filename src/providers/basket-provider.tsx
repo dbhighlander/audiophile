@@ -33,7 +33,6 @@ const BasketProvider: React.FC<BasketProviderProps> = ({ children }) => {
 
     if(typeof basket !== 'undefined'){
       basket = JSON.parse(basket);
-      console.log(basket)
       setBasket(basket)
     }
     
