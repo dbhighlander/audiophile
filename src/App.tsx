@@ -17,6 +17,7 @@ import ScrollToTop from './utilities/scroll-to-top';
 import SubHeaderContainer from './containers/header/sub-header-container';
 import ShopContainer from './containers/main/shop-container';
 import CheckoutContainer from './containers/main/checkout-container';
+import NotFound from './components/main/not-found';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path='/' element={<ShopContainer />} />
             <Route path='products/*' element={<ShopContainer />} />           
             <Route path='checkout' element={<CheckoutContainer />} />
+            <Route path='*' element={<NotFound />}/>
           </Routes>
       </HashRouter>
     
