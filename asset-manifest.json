@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/audiophile/static/css/main.48ea3cf7.css",
-    "main.js": "/audiophile/static/js/main.58e738db.js",
+    "main.js": "/audiophile/static/js/main.4dbd8b0c.js",
     "static/js/787.8093f5c1.chunk.js": "/audiophile/static/js/787.8093f5c1.chunk.js",
     "static/media/image-speaker-zx9.png": "/audiophile/static/media/image-speaker-zx9.97769f2fb291eaed1868.png",
     "static/media/image-product.jpg": "/audiophile/static/media/image-product.4dc7e99c2ff099acdcef.jpg",
@@ -23,11 +23,11 @@
     "static/media/orange-chevron.svg": "/audiophile/static/media/orange-chevron.aefddf297740fe9b50fc.svg",
     "static/media/icon-hamburger.svg": "/audiophile/static/media/icon-hamburger.f8a9f0cf12d419a7d18556f98d81a47e.svg",
     "main.48ea3cf7.css.map": "/audiophile/static/css/main.48ea3cf7.css.map",
-    "main.58e738db.js.map": "/audiophile/static/js/main.58e738db.js.map",
+    "main.4dbd8b0c.js.map": "/audiophile/static/js/main.4dbd8b0c.js.map",
     "787.8093f5c1.chunk.js.map": "/audiophile/static/js/787.8093f5c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.48ea3cf7.css",
-    "static/js/main.58e738db.js"
+    "static/js/main.4dbd8b0c.js"
   ]
 }
