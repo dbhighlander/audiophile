@@ -7,14 +7,14 @@ const ProductImages = ({product}:ProductProps ) => {
         <div className='product__images-container'>
             <div className='product__images-left-container'>
                 <div className="product__image-left">
-                    <img  className="product__image-left-photo" src={'/'+product.gallery.first.desktop} />
+                    <img  className="product__image-left-photo" src={'./'+product.gallery.first.desktop} />
                 </div>
                 <div className="product__image-left">
-                    <img className="product__image-left-photo" src={'/'+product.gallery.second.desktop} />
+                    <img className="product__image-left-photo" src={'./'+product.gallery.second.desktop} />
                 </div>
             </div>
             <div className='product__images-main-container'>
-                <img  className="product__image-main-photo" src={'/'+product.gallery.third.desktop} />
+                <img  className="product__image-main-photo" src={'./'+product.gallery.third.desktop} />
             </div>
         </div>
     );
