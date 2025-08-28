@@ -101,7 +101,7 @@ const Checkout = (
                         </div>
                     </div>
                     <div className='checkout__section checkout__summary__text'>
-                        <img alt='' className='checkout__cash__icon' src={'./assets/checkout/icon-cash-on-delivery.svg'} />
+                        <img alt='checkout cash icon' className='checkout__cash__icon' src={'./assets/checkout/icon-cash-on-delivery.svg'} />
                         <p className='checkout__prompt__text'>
                             The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
                         </p>

@@ -24,7 +24,7 @@ const HeaderCategoryType = ({productType}:ProductTypeProps) => {
 
     return (
         <Link to={'/products/'+productType} className='header__navigation__link header__product__type' >
-            <img className='header__product__image' src={img} />
+            <img className='header__product__image' src={img} alt='header product image' />
             <p className='header__product__title'>{productType}</p>
             <p className='header__product__link' >Shop</p>
         </Link>

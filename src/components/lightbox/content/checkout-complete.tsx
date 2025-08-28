@@ -12,7 +12,7 @@ const CheckoutComplete = ({basket,total,handleCheckoutComplete}:CheckoutSummaryP
 
             <div className="lightbox__content">
                 <div className="order__summary__header">
-                    <img className="icon--cash-delivery" src='/assets/checkout/icon-order-confirmation.svg' alt=''/>
+                    <img className="icon--cash-delivery" src='/assets/checkout/icon-order-confirmation.svg' alt='icon cash'/>
                     <h2 className="order__summary__title">Thank you for your order</h2>
                     <p className="order__summary__text">You will receive an email confirmation shortly</p>
                 </div>

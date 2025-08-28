@@ -23,7 +23,7 @@ const ProductType = ({productType}:ProductTypeProps) => {
     return (
 
             <Link className='product__type' to={'/products/'+productType}>
-                <img className='product__image' src={img} />
+                <img className='product__image' src={img} alt='product image'/>
                 <p className='product__title'>{productType}</p>
                 <span className='product__link'>Shop</span>
             </Link>
